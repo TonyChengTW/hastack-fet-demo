@@ -238,6 +238,10 @@ class BasePolicyEngine(object):
         result = False
         try:
             status = ipmi_utils.get_power(node)
+            LOG.info(_LI("IPMI Successful : %(node)s getting IPMI status : %(status)s")
+                         % {'node': node['hypervisor_hostname'],
+                            'status': status}
+                         )
         except Exception as ipmi_exc:
             LOG.warning(_LW("Get IPMI exception for %(node)s "
                             "with reason: %(reason)s")

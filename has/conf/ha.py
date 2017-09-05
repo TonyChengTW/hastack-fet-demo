@@ -17,7 +17,7 @@ from oslo_config import cfg
 
 ha_period_interval = [
     cfg.IntOpt('ha_period_interval',
-               default=60,
+               default=30,
                help='The period interval of the hastack service'
                     ' to check the compute power status.')
 ]
